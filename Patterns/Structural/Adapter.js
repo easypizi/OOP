@@ -23,7 +23,6 @@ function AdvancedShipping() {
 }
 
 // adapter interface
-
 function ShippingAdapter(credentials) {
   let shipping = new AdvancedShipping();
 
