@@ -1,5 +1,5 @@
 # OOP
-OOP Patters examples
+OOP Patterns examples
 
 
 Solvery.io
