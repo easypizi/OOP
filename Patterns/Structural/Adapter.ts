@@ -9,7 +9,7 @@
  * - Unifying different interfaces under a common one
  */
 
-class Shipping {
+class LegacyShipping {
   public request(zipStart: string, zipEnd: string, weight: string): string {
     return "$49.75";
   }
@@ -52,7 +52,7 @@ const log = (() => {
 })();
 
 const run = (): void => {
-  const shipping = new Shipping();
+  const shipping = new LegacyShipping();
   const credentials = { token: "30a8-6ee1" };
   const adapter = new ShippingAdapter(credentials);
 
@@ -66,4 +66,5 @@ const run = (): void => {
 
 run();
 
+export {};
 

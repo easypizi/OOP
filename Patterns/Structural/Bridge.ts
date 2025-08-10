@@ -48,7 +48,7 @@ class Mouse {
   }
 }
 
-class Screen implements OutputDevice {
+class ScreenOutput implements OutputDevice {
   click(): void {
     log.add("Screen select");
   }
@@ -63,7 +63,7 @@ class Screen implements OutputDevice {
   }
 }
 
-class Audio implements OutputDevice {
+class AudioOutput implements OutputDevice {
   click(): void {
     log.add("Sound oink");
   }
@@ -92,8 +92,8 @@ const log = (() => {
 })();
 
 const run = (): void => {
-  const screen = new Screen();
-  const audio = new Audio();
+  const screen = new ScreenOutput();
+  const audio = new AudioOutput();
   const hand = new Gestures(screen);
   const mouse = new Mouse(audio);
 
@@ -110,4 +110,5 @@ const run = (): void => {
 
 run();
 
+export {};
 

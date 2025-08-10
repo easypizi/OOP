@@ -49,4 +49,5 @@ const run = (): void => {
 
 run();
 
+export {};
 

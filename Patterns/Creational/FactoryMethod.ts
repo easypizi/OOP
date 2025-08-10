@@ -15,14 +15,14 @@ interface Person {
   say(): void;
 }
 
-class Employee implements Person {
+class FMEmployee implements Person {
   constructor(public name: string) {}
   public say(): void {
     log.add(`I am employee ${this.name}`);
   }
 }
 
-class Vendor implements Person {
+class FMVendor implements Person {
   constructor(public name: string) {}
   public say(): void {
     log.add(`I am vendor ${this.name}`);
@@ -33,15 +33,15 @@ interface PersonFactory {
   create(name: string): Person;
 }
 
-class EmployeeFactory implements PersonFactory {
+class FMEmployeeFactory implements PersonFactory {
   public create(name: string): Person {
-    return new Employee(name);
+    return new FMEmployee(name);
   }
 }
 
-class VendorFactory implements PersonFactory {
+class FMVendorFactory implements PersonFactory {
   public create(name: string): Person {
-    return new Vendor(name);
+    return new FMVendor(name);
   }
 }
 
@@ -60,8 +60,8 @@ const log = (() => {
 
 const run = (): void => {
   const persons: Person[] = [];
-  const employeeFactory = new EmployeeFactory();
-  const vendorFactory = new VendorFactory();
+  const employeeFactory = new FMEmployeeFactory();
+  const vendorFactory = new FMVendorFactory();
 
   persons.push(employeeFactory.create("Joan DiSilva"));
   persons.push(employeeFactory.create("Tim O'Neill"));
@@ -74,4 +74,5 @@ const run = (): void => {
 
 run();
 
+export {};
 
